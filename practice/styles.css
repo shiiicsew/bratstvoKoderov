@@ -1,0 +1,265 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+    color: #0C1014;
+    font-weight: 600;
+}
+
+body {
+    width: 100%;
+    height: 100dvh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* MODAL */
+.modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* overflow-y: auto; */
+}
+
+.modal--hidden {
+    display: none;
+}
+
+.modal__content {
+    margin: 25px;
+    width: 754px;
+    height: fit-content;
+    background-color: white;
+    padding: 20px 98px;
+    padding-top: 53px;
+    border-radius: 12px;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+@media (max-width: 682px) {
+    .modal__content {
+        padding: 20px;
+        padding-top: 53px;
+    }
+}
+
+.modal__title {
+    font-weight: 800;
+    padding-bottom: 35px;
+}
+
+.modal__close {
+    background: 0;
+    color: #0848C0;
+    border: 0;
+    width: 100%;
+    margin-top: 15px;
+    margin-bottom: 30px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+/* LOGO */
+.logo-container {
+    position: relative;
+    /* display: inline-block; */
+}
+
+.logo-preview {
+    margin-top: 15px;
+    width: 155px;
+    height: 155px;
+    border: 1px solid #ccc;
+    border-radius: 99px;
+    transition: filter 0.3s ease;
+    cursor: pointer;
+}
+
+@media (max-width: 682px) {
+    .logo-preview {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+.hover-logo {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    top: 52%;
+    left: 48%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+}
+
+.hover-text {
+    color: white;
+    text-decoration: underline;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.logo-container:hover .logo-preview {
+    filter: brightness(0.7);
+}
+
+.logo-container:hover .hover-text {
+    opacity: 1;
+}
+
+.reset-logo-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    color: #D90000;
+    font-size: 20px;
+    cursor: pointer;
+    display: none;
+    z-index: 1;
+}
+
+.logo-container:hover .reset-logo-button {
+    display: block;
+}
+
+/* FORM */
+.form__label {
+    color: #6A6E72;
+    font-weight: 700;
+    font-size: 12px;
+}
+
+.required-indicator {
+    font-weight: 800;
+    color: #D90000;
+    margin-right: 4px;
+}
+
+.form__group {
+    display: flex;
+}
+
+.form__fields {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.form__field {
+    margin-bottom: 25px;
+    position: relative;
+}
+
+.form__input::placeholder {
+    color: #999;
+    padding-left: 4px;
+    font-size: 12px;
+}
+
+.form__input:focus::placeholder {
+    transform: translateY(-12px);
+    font-size: 10px;
+    transition: transform 0.2s ease;
+}
+
+.form__field.required::before {
+    content: "*";
+    color: #D90000;
+    position: absolute;
+    left: 10px;
+    top: 16px;
+}
+
+.form__field.required:focus::before {
+    transform: translateY(-12px);
+}
+
+.form__input,
+.form__select {
+    border: 1px solid #D6DADE;
+    width: 100%;
+    padding: 15px;
+    /* box-sizing: border-box; */
+}
+
+.form__input {
+    padding-left: 20px;
+    padding-right: 40px;
+}
+
+.input-icon {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    width: 18px;
+    height: 18px;
+}
+
+.form__logo-upload {
+    margin-left: 25px;
+}
+
+.form__submit {
+    margin-top: 25px;
+    padding: 15px;
+    width: 100%;
+    background-color: #E5266E;
+    border: 0;
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.button {
+    margin-top: 25px;
+    padding: 15px;
+    width: 20%;
+    border-radius: 20px;
+    background: 0;
+    border: 3px solid #E5266E;
+    color: #E5266E;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+@media (max-width: 682px) {
+    .button {
+        width: 50%;
+    }
+}
+
+/* SCROLL */
+.modal__content::-webkit-scrollbar {
+    width: 10px;
+}
+
+.modal__content::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 99px;
+}
+
+.modal__content::-webkit-scrollbar-thumb {
+    background: #e5266f58;
+    border-radius: 99px;
+}
+
+.modal__content::-webkit-scrollbar-thumb:hover {
+    background: #e5266fd0;
+}

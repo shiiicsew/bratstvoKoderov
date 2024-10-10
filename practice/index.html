@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>practice 1</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <div class="modal modal--hidden" id="modal">
+        <div class="modal__content">
+            <h2 class="modal__title">Стать партнёром проекта</h2>
+            <form class="form" id="feedbackForm">
+                <div class="form__group">
+                    <div class="form__fields">
+                        <div class="form__field required">
+                            <input type="text" id="organization" class="form__input" placeholder="Название организации"
+                                required>
+                        </div>
+                        <div class="form__field required">
+                            <input type="tel" id="phone" class="form__input" placeholder="Телефон" required required
+                                pattern="\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}" title="Формат: +7 (123) 456-78-90">
+                        </div>
+                        <div class="form__field required">
+                            <input type="email" id="email" class="form__input" placeholder="E-mail" required>
+                        </div>
+                    </div>
+
+                    <!-- Область для загрузки логотипа -->
+                    <div class="form__field form__logo-upload">
+                        <label for="logo" class="form__label">
+                            <span class="required-indicator">*</span>Логотип (jpeg, png)</label>
+                        <div class="logo-container" onclick="document.getElementById('logo').click();">
+                            <input type="file" id="logo" accept=".jpeg, .jpg, .png"
+                                class="form__input form__input--file" style="display: none;">
+                            <img id="logoPreview" class="logo-preview" src="img/krutoiYa.jpeg" alt="Логотип">
+                            <div class="hover-logo">
+                                <span class="hover-text"><img src="img/file.svg" alt=""></span>
+                                <span class="hover-text">Выберите файл</span>
+                            </div>
+                            <button id="resetLogo" class="reset-logo-button" type="button"><img
+                                    src="img/resetImg.svg"></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form__field">
+                    <label for="direction" class="form__label">
+                        <span class="required-indicator">*</span>Направление</label>
+                    <select id="direction" class="form__select" required>
+                        <option value="" disabled>Выберите направление</option>
+                        <option value="ecology" selected>Экология</option>
+                        <option value="psychology">Психология</option>
+                        <option value="informatics">Информатика</option>
+                    </select>
+                </div>
+                <div class="form__field">
+                    <input type="text" id="website" class="form__input" value="avc.ru">
+                    <img src="img/site.svg" alt="Сайт" class="input-icon">
+                </div>
+                <div class="form__field">
+                    <input type="text" id="vk" class="form__input" value="vk.com/shans">
+                    <img src="img/vk.svg" alt="vk" class="input-icon">
+                </div>
+                <div class="form__field">
+                    <input type="text" id="ok" class="form__input" value="ok.com/shans">
+                    <img src="img/ok.svg" alt="ok" class="input-icon">
+                </div>
+                <div class="form__field">
+                    <input type="text" id="facebook" class="form__input" value="facebook.com/shans">
+                    <img src="img/facebook.svg" alt="facebook" class="input-icon">
+                </div>
+                <div class="form__field">
+                    <input type="text" id="instagram" class="form__input" value="instagram.com/shans">
+                    <img src="img/inst.svg" alt="instagram" class="input-icon">
+                </div>
+                <div class="form__field">
+                    <input type="text" id="youtube" class="form__input" value="youtube.com/shans">
+                    <img src="img/yt.svg" alt="youtube" class="input-icon">
+                </div>
+                <div class="form__field">
+                    <input type="text" id="manager" class="form__input" placeholder="Руководитель">
+                </div>
+
+
+                <button type="submit" class="form__submit">Стать партнёром проекта</button>
+                <button class="modal__close" id="closeModal">Отменить</button>
+            </form>
+        </div>
+
+    </div>
+    <button id="openModal" class="button">Открыть модальное окно</button>
+
+
+</body>
+
+</html>
